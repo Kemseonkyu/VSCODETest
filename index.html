@@ -235,6 +235,26 @@
       color: #4caf7d;
       font-weight: 600;
     }
+
+    .disqus-section {
+      width: 100%;
+      max-width: 520px;
+      margin: 32px auto 0;
+      background: var(--container-bg);
+      border: 1px solid var(--container-border);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      padding: 36px;
+      backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border 0.3s ease;
+    }
+
+    .disqus-section h2 {
+      font-size: 1.4rem;
+      margin: 0 0 24px;
+      color: var(--text);
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -270,6 +290,12 @@
       </form>
       <div class="form-success" id="formSuccess">문의가 성공적으로 전송되었습니다! 빠르게 답변 드릴게요.</div>
     </div>
+  </div>
+
+  <div class="disqus-section">
+    <h2>댓글</h2>
+    <div id="disqus_thread"></div>
+    <noscript>댓글을 보려면 JavaScript를 활성화해주세요. <a href="https://disqus.com/?ref_noscript">Disqus 댓글 서비스</a></noscript>
   </div>
 
   <script>
@@ -344,6 +370,15 @@
         submitBtn.disabled = false;
       }
     });
+  </script>
+
+  <script>
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://productbuilder-kn0icthgny.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   </script>
 </body>
 </html>
